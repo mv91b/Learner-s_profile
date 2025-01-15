@@ -7,9 +7,9 @@ function App() {
       <header className="App-header">
         <h1> Welcome !!! </h1>
         <h2>
-          This is my first change
+          This is my first change "Rishik Mishra".
         </h2>
-        <h3>This is my second change</h3>
+
   
       </header>
     </div>
