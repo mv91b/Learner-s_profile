@@ -17,10 +17,6 @@ export default function Navbar(props) {
 
           <div className="d-flex">
             <button className="btn btn-sm btn-dark mx-1" onClick={() => props.toggleMode('dark')}>Dark Mode</button>
-            <button className="btn btn-sm btn-warning mx-1" onClick={() => props.toggleMode('yellow')}>Yellow Mode</button>
-            <button className="btn btn-sm btn-pink mx-1" style={{ backgroundColor: '#ffc0cb', color: 'black' }} onClick={() => props.toggleMode('pink')}>Pink Mode</button>
-            <button className="btn btn-sm btn-success mx-1" onClick={() => props.toggleMode('green')}>Green Mode</button>
-            <button className="btn btn-sm btn-primary mx-1" onClick={() => props.toggleMode('blue')}>Blue Mode</button>
             <button className="btn btn-sm btn-light mx-1" onClick={() => props.toggleMode('light')}>Light Mode</button>
           </div>
         </div>

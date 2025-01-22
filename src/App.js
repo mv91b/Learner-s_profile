@@ -20,22 +20,7 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = 'grey';
       showAlert('Dark mode has been enabled', 'success');
-    } else if (newMode === 'yellow') {
-      setMode('yellow');
-      document.body.style.backgroundColor = '#f9f871';
-      showAlert('Yellow mode has been enabled', 'success');
-    } else if (newMode === 'pink') {
-      setMode('pink');
-      document.body.style.backgroundColor = '#ffc0cb';
-      showAlert('Pink mode has been enabled', 'success');
-    } else if (newMode === 'green') {
-      setMode('green');
-      document.body.style.backgroundColor = '#a8e6cf';
-      showAlert('Green mode has been enabled', 'success');
-    } else if (newMode === 'blue') {
-      setMode('blue');
-      document.body.style.backgroundColor = '#add8e6';
-      showAlert('Blue mode has been enabled', 'success');
+
     } else {
       setMode('light');
       document.body.style.backgroundColor = 'white';
