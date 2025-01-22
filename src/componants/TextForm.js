@@ -57,22 +57,33 @@ export default function TextForm(props) {
             rows="8"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUpClick}>
-          Convert to Uppercase
-        </button>
-        <button className="btn btn-primary mx-2" onClick={handleLoClick}>
-          Convert to Lowercase
-        </button>
-        <button className="btn btn-primary mx-2" onClick={handleClearOnClick}>
-          Clear Text
-        </button>
+              <button
+        className="btn mx-2"
+        style={{ backgroundColor: props.mode === 'dark' ? '#6c757d' : props.mode === 'yellow' ? '#fdd835' : props.mode === 'pink' ? '#ff69b4' : props.mode === 'green' ? '#28a745' : props.mode === 'blue' ? '#007bff' : '#0d6efd', color: 'white' }}
+        onClick={handleUpClick}
+      >
+        Convert to Uppercase
+      </button>
+      <button
+        className="btn mx-2"
+        style={{ backgroundColor: props.mode === 'dark' ? '#6c757d' : props.mode === 'yellow' ? '#fdd835' : props.mode === 'pink' ? '#ff69b4' : props.mode === 'green' ? '#28a745' : props.mode === 'blue' ? '#007bff' : '#0d6efd', color: 'white' }}
+        onClick={handleLoClick}
+      >
+        Convert to Lowercase
+      </button>
+      <button
+        className="btn mx-2"
+        style={{ backgroundColor: props.mode === 'dark' ? '#6c757d' : props.mode === 'yellow' ? '#fdd835' : props.mode === 'pink' ? '#ff69b4' : props.mode === 'green' ? '#28a745' : props.mode === 'blue' ? '#007bff' : '#0d6efd', color: 'white' }}
+        onClick={handleClearOnClick}
+      >
+        Clear Text
+      </button>
+
+
       </div>
       <div className="container" style={{ color: modeStyle.color }}>
         <h1>Text Summary</h1>
-        <p>
-          {text.trim().length > 0 ? text.split(/\s+/).length : 0} words and{' '}
-          {text.length} characters
-        </p>
+        <p>{text.trim().split(/\s+/).filter((word) => word !== '').length} words and {text.length} characters</p>
         <p>
           {text.trim().length > 0
             ? (0.008 * text.split(/\s+/).length).toFixed(2)
