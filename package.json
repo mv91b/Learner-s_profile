@@ -1,5 +1,5 @@
 {
-  "homepage": "https://mv91b.github.io/Learner-s_profile_with_React",
+ 
   "name": "my_first_react_app",
   "version": "0.1.0",
   "private": true,
@@ -12,9 +12,6 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build --repo https://github.com/mv91b/Learner-s_profile_with_React.git",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
