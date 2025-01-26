@@ -1,55 +1,41 @@
-import React, { useState } from 'react';
-import './App.css';
-import Navbar from './componants/Navbar';
-import TextForm from './componants/TextForm';
-import Alert from './componants/Alert';
-import About from './componants/About';
-import { 
-  BrowserRouter as Router,
-  Switch, 
-  Route,
-} from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import TextForm from "./components/TextForm";
+import About from "./components/About";
+import Alert from "./components/Alert";
 
-function App() {
-  const [mode, setMode] = useState('light'); // Default mode
+export default function App() {
+  const [mode, setMode] = useState("light");
   const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type) => {
     setAlert({ msg: message, type: type });
-    setTimeout(() => {
-      setAlert(null); // Clear alert after 3 seconds
-    }, 2000);
+    setTimeout(() => setAlert(null), 2000);
   };
 
-  const toggleMode = (newMode) => {
-    if (newMode === 'dark') {
-      setMode('dark');
-      document.body.style.backgroundColor = 'grey';
-      showAlert('Dark mode has been enabled', 'success');
-      document.title = "TextUtils - Dark Mode";
+  const toggleMode = () => {
+    if (mode === "light") {
+      setMode("dark");
+      document.body.style.backgroundColor = "#333";
+      showAlert("Dark mode has been enabled", "success");
     } else {
-      setMode('light');
-      document.body.style.backgroundColor = 'white';
-      showAlert('Light mode has been enabled', 'success');
-      document.title = 'TextUtils - Light Mode';
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+      showAlert("Light mode has been enabled", "success");
     }
   };
 
   return (
-    <>
-      <Router>
-        {/* <Navbar title="textUtils" aboutText="About Us" mode={mode} toggleMode={toggleMode} /> */}
-        <Alert alert={alert} />
-
+    <Router>
+      <Navbar title="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode} />
+      <Alert alert={alert} />
+      <div className="container my-3">
         <Switch>
-          <Route path="/about" exact component={About} />
-          <Route path="/" exact component={() => 
-          <TextForm showAlert={showAlert} heading="Enter the text below to analyze" mode={mode} />
-         } />
-         </Switch>
-       </Router>
-    </>
+          <Route exact path="/" component={() => <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
+          <Route exact path="/about" component={About} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
-
-export default App;

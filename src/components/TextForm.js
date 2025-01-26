@@ -1,4 +1,3 @@
-
 import React, {useState} from 'react'
 
 export default function TextForm(props) {
@@ -39,8 +38,7 @@ export default function TextForm(props) {
         <h1>
         Text summery
         </h1>
-        <p>{text.split(/\s+/).filter((word) => word.length > 0).length} words and {text.length} characters</p>
-
+        <p> {text.split(' ').length}  words and {text.length} charectors</p>
         <p> { 0.008 * text.split(' ').length}  minute </p>
         <h2>
          preview
