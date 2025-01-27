@@ -32,7 +32,13 @@ export default function App() {
       <Alert alert={alert} />
       <div className="container my-3">
         <Switch>
-          <Route exact path="/" component={() => <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />
+            )}
+          />
           <Route exact path="/about" component={About} />
         </Switch>
       </div>
