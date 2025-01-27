@@ -20,6 +20,17 @@ export default function TextForm(props) {
     props.showAlert("Text has been cleared!", "success");
   };
 
+  const handleCopyClick = () => {
+    navigator.clipboard.writeText(text);
+    props.showAlert("Text copied to clipboard!", "success");
+  };
+
+  const handleRemoveExtraSpaces = () => {
+    let newText = text.replace(/\s+/g, " ").trim();
+    setText(newText);
+    props.showAlert("Extra spaces removed!", "success");
+  };
+
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
@@ -47,16 +58,48 @@ export default function TextForm(props) {
               color: props.mode === "dark" ? "white" : "black",
             }}
             rows="8"
+            aria-label="Enter your text here"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUpClick}>
+        <button
+          className="btn btn-primary mx-2"
+          onClick={handleUpClick}
+          disabled={text.length === 0}
+          aria-label="Convert text to uppercase"
+        >
           Convert to Uppercase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleLoClick}>
+        <button
+          className="btn btn-primary mx-2"
+          onClick={handleLoClick}
+          disabled={text.length === 0}
+          aria-label="Convert text to lowercase"
+        >
           Convert to Lowercase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleClearOnClick}>
+        <button
+          className="btn btn-primary mx-2"
+          onClick={handleClearOnClick}
+          disabled={text.length === 0}
+          aria-label="Clear text"
+        >
           Clear Text
+        </button>
+        <button
+          className="btn btn-primary mx-2"
+          onClick={handleCopyClick}
+          disabled={text.length === 0}
+          aria-label="Copy text"
+        >
+          Copy Text
+        </button>
+        <button
+          className="btn btn-primary mx-2"
+          onClick={handleRemoveExtraSpaces}
+          disabled={text.length === 0}
+          aria-label="Remove extra spaces"
+        >
+          Remove Extra Spaces
         </button>
       </div>
       <div
