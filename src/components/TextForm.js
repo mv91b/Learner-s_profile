@@ -35,7 +35,7 @@ export default function TextForm(props) {
     setText(event.target.value);
   };
 
-  const wordCount = text.trim().length > 0 ? text.trim().split(/\s+/).length : 0;
+  // const wordCount = text.trim().length > 0 ? text.trim().split(/\s+/).length : 0;
 
   return (
     <>
@@ -62,7 +62,7 @@ export default function TextForm(props) {
           ></textarea>
         </div>
         <button
-          className="btn btn-primary mx-2"
+          className="btn btn-primary mx-2 my-1"
           onClick={handleUpClick}
           disabled={text.length === 0}
           aria-label="Convert text to uppercase"
@@ -70,7 +70,7 @@ export default function TextForm(props) {
           Convert to Uppercase
         </button>
         <button
-          className="btn btn-primary mx-2"
+          className="btn btn-primary mx-2 my-1"
           onClick={handleLoClick}
           disabled={text.length === 0}
           aria-label="Convert text to lowercase"
@@ -78,7 +78,7 @@ export default function TextForm(props) {
           Convert to Lowercase
         </button>
         <button
-          className="btn btn-primary mx-2"
+          className="btn btn-primary mx-2 my-1"
           onClick={handleClearOnClick}
           disabled={text.length === 0}
           aria-label="Clear text"
@@ -86,7 +86,7 @@ export default function TextForm(props) {
           Clear Text
         </button>
         <button
-          className="btn btn-primary mx-2"
+          className="btn btn-primary mx-2 my-1"
           onClick={handleCopyClick}
           disabled={text.length === 0}
           aria-label="Copy text"
@@ -94,7 +94,7 @@ export default function TextForm(props) {
           Copy Text
         </button>
         <button
-          className="btn btn-primary mx-2"
+          className="btn btn-primary mx-2 my-1"
           onClick={handleRemoveExtraSpaces}
           disabled={text.length === 0}
           aria-label="Remove extra spaces"
@@ -108,9 +108,9 @@ export default function TextForm(props) {
       >
         <h2>Text Summary</h2>
         <p>
-          {wordCount} words and {text.length} characters
+          {text.split(" ").filter((element)=> {return element.length !==0} ).length} words and {text.length} characters
         </p>
-        <p>{(0.008 * wordCount).toFixed(2)} minutes to read</p>
+        <p>{0.008 * text.split(' ').length} minutes to read</p>
         <h2>Preview</h2>
         <p>{text.length > 0 ? text : "Enter something in the textbox to preview"}</p>
       </div>
