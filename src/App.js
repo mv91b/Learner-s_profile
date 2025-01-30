@@ -39,11 +39,7 @@ export default function App() {
               <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />
             )}
           />
-          {/* <Route exact path="/about" component={About} /> */}
-            <Route exact path ="/about">
-              <About mode={mode} />
-            </Route>
-
+          <Route exact path="/about" render={() => <About mode={mode} />} />
         </Switch>
       </div>
     </Router>
