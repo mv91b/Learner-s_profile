@@ -3,12 +3,12 @@ import React from "react";
 export default function About(props) {
   let mystyle = {
     color: props.mode === "dark" ? "white" : "#042743",
-    backgroundColor: props.mode === "dark" ? "#36454F" : "white",
-    border: props.mode === "dark" ? "0px solid white" : "0px solid #042743",
+    backgroundColor: props.mode === "dark" ? 'rgb (36 74 104)' : "white",
+    // border: props.mode === "dark" ? "0px solid white" : "0px solid #042743",
   };
 
   return (
-    <div className="container my-3" style={mystyle}>
+    <div className="container my-3" style={{color: props.mode === "dark" ? "white" : "#042743"}}>
       <h2 className="my-3">About Us</h2>
       <div className="accordion" id="accordionPanelsStayOpenExample">
         <div className="accordion-item">
@@ -20,6 +20,7 @@ export default function About(props) {
           </h2>
           <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show">
             <div className="accordion-body" style={mystyle}>
+              This is about Me...
               TextUtils gives you a way to analyze your text quickly and efficiently, be it word count, character count, or other features.
             </div>
           </div>
