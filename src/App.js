@@ -17,11 +17,11 @@ export default function App() {
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
-      document.body.style.backgroundColor = "#333";
+      document.body.style.backgroundColor = "#121212";
       showAlert("Dark mode has been enabled", "success");
     } else {
       setMode("light");
-      document.body.style.backgroundColor = "white";
+      document.body.style.backgroundColor = "#ffffff";
       showAlert("Light mode has been enabled", "success");
     }
   };
