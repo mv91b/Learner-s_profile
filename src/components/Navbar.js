@@ -32,10 +32,19 @@ export default function Navbar({ title, aboutText, mode, toggleMode }) {
               </Link>
             </li>
           </ul>
-          <div className="d-flex">
-            <button className="btn btn-sm btn-dark mx-2" onClick={toggleMode}>
+
+          {/* Toggle Switch */}
+          <div className="form-check form-switch text-dark">
+            <input
+              className="form-check-input"
+              type="checkbox"
+              id="darkModeSwitch"
+              onChange={toggleMode}
+              checked={mode === "dark"}
+            />
+            <label className="form-check-label" htmlFor="darkModeSwitch">
               {mode === "light" ? "Enable Dark Mode" : "Enable Light Mode"}
-            </button>
+            </label>
           </div>
         </div>
       </div>
