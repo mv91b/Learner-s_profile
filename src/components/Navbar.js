@@ -33,16 +33,15 @@ export default function Navbar({ title, aboutText, mode, toggleMode }) {
             </li>
           </ul>
 
-          {/* Toggle Switch */}
-          <div className="form-check form-switch text-dark">
+          {/* Updated toggle switch */}
+          <div className={`form-check form-switch text-${mode === 'dark' ? 'light' : 'dark'}`}>
             <input
               className="form-check-input"
               type="checkbox"
-              id="darkModeSwitch"
               onChange={toggleMode}
               checked={mode === "dark"}
             />
-            <label className="form-check-label" htmlFor="darkModeSwitch">
+            <label className="form-check-label">
               {mode === "light" ? "Enable Dark Mode" : "Enable Light Mode"}
             </label>
           </div>
