@@ -42,7 +42,7 @@ export default function TextForm(props) {
       <div
         className="container"
         style={{
-          backgroundColor: props.mode === "dark" ? "#333" : "white",
+          backgroundColor: props.mode === "dark" ? "black" : "white",
           color: props.mode === "dark" ? "white" : "black",
         }}
       >
