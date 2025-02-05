@@ -54,7 +54,7 @@ export default function TextForm(props) {
             value={text}
             onChange={handleOnChange}
             style={{
-              backgroundColor: props.mode === "dark" ? "#555" : "white",
+              backgroundColor: props.mode === "dark" ? "rgb(29 28 28)" : "white",
               color: props.mode === "dark" ? "white" : "black",
             }}
             rows="8"
@@ -79,14 +79,6 @@ export default function TextForm(props) {
         </button>
         <button
           className="btn btn-primary mx-2 my-1"
-          onClick={handleClearOnClick}
-          disabled={text.length === 0}
-          aria-label="Clear text"
-        >
-          Clear Text
-        </button>
-        <button
-          className="btn btn-primary mx-2 my-1"
           onClick={handleCopyClick}
           disabled={text.length === 0}
           aria-label="Copy text"
@@ -101,6 +93,14 @@ export default function TextForm(props) {
         >
           Remove Extra Spaces
         </button>
+        <button
+          className="btn btn-danger mx-2 my-1"
+          onClick={handleClearOnClick}
+          disabled={text.length === 0}
+          aria-label="Clear text"
+        >
+          Clear Text
+        </button>
       </div>
       <div
         className="container"
@@ -110,7 +110,7 @@ export default function TextForm(props) {
         <p>
           {text.split(" ").filter((element)=> {return element.length !==0} ).length} words and {text.length} characters
         </p>
-        <p>{0.008 * text.split(' ').length} minutes to read</p>
+        <p>{0.008 * text.split(' ').filter((element)=> {return element.length !==0} ).length} minutes to read</p>
         <h2>Preview</h2>
         <p>{text.length > 0 ? text : "Enter something in the textbox to preview"}</p>
       </div>
