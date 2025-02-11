@@ -27,7 +27,7 @@ export default function About(props) {
           <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show">
             <div className="accordion-body" style={mystyle}>
             TextUtils provides an efficient and reliable solution for text analysis, offering features such as word count, 
-            character count, and other advanced functionalities to streamline your text processing needs
+            character count
             </div>
           </div>
         </div>
